@@ -1,0 +1,100 @@
+# Mediawiki Syntax Sheet
+# ----------------------
+#
+#
+# Code Blocks
+#
+snippet code
+	<pre class="brush:[${1:language}]">
+	${2:code here}
+	</pre>
+snippet c
+	<pre class="brush:[${1:language}]">
+	${2:code here}
+	</pre>
+snippet codet
+	{code source='${1:language}' title='${2:title}'}
+	${3:code here}
+	{/code}
+snippet ct
+	{code source='${1:language}' title='${2:title}'}
+	${3:code here}
+	{/code}
+#
+# Inline Code
+#
+snippet m
+	<tt>${1:<code text>}</tt> ${2:<weiter ...>}
+snippet tt
+	<tt>${1:<code text>}</tt> ${2:<weiter ...>}
+#
+# Italic
+#
+snippet italic
+	''${1:<italic text>}'' ${2:<weiter ...>}
+snippet i
+	''${1:<italic text>}'' ${2:<weiter ...>}
+snippet kursiv
+	''${1:<italic text>}'' ${2:<weiter ...>}
+#
+# Bold
+#
+snippet bold
+	'''${1:<bold text>}''' ${2:<weiter ...>}
+snippet b
+	'''${1:<bold text>}''' ${2:<weiter ...>}
+snippet fett
+	'''${1:<bold text>}''' ${2:<weiter ...>}
+#
+# Strike
+#
+snippet strike
+	<del>${1:<striked text>}</del> ${2:<weiter ...>}
+snippet del
+	<del>${1:<striked text>}</del> ${2:<weiter ...>}
+snippet s
+	<del>${1:<striked text>}</del> ${2:<weiter ...>}
+#
+# Message Box
+#
+snippet box
+	^
+	${1:<box text>}
+	^
+	
+	${2:<weiter ...>}
+#
+# Misc
+#
+snippet ref
+	<ref>${1:<reference>}</ref> ${2:<weiter ...>}
+snippet esc
+	<nowiki>${1:<escaped text>}</nowiki> ${2:<weiter ...>}
+snippet e
+	<nowiki>${1:<escaped text>}</nowiki> ${2:<weiter ...>}
+#
+# Links
+#
+snippet link
+	[[${1:<link text>}]] ${2:<weiter ...>}
+snippet l
+	[[${1:<link text>}]] ${2:<weiter ...>}
+snippet linkd
+	[[${1:<link text>}|${2:<description>}]] ${3:<weiter ...>}
+snippet ld
+	[[${1:<link text>}|${2:<description>}]] ${3:<weiter ...>}
+snippet lf
+	[[File:${1:<filename|right,border,frame,thumb|caption>}]] ${2:<weiter ...>}
+snippet la
+	{{Datei|${1:<file type>}|${2:<file name>}}} ${3:<weiter ...>}
+#
+# Tables
+#
+snippet table
+	{| class="wikitable"
+	|-
+	! ${1:<Header 1>}
+	|-
+	|${2:<Item 1>}
+	|-
+	|}

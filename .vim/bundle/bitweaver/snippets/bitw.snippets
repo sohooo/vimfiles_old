@@ -1,0 +1,94 @@
+# Bitweaver Syntax Sheet
+# Features
+# ----------------------
+# TOC:          toc; mtoc
+# Code Blocks:  code, c; codet, ct
+# Inline Code:  mono, m
+# Bold:         bold, b, fett, f
+# Message Box:  box
+# Links:        link, l; linkd, ld
+# Tables:       table
+#
+#
+# TOC
+snippet mtoc
+	{maketoc}
+	${1}
+snippet toc
+	{toc}
+	${1}
+#
+# Code Blocks
+#
+snippet code
+	{code source='${1:language}'}
+	${2:code here}
+	{/code}
+snippet c
+	{code source='${1:language}'}
+	${2:code here}
+	{/code}
+snippet codet
+	{code source='${1:language}' title='${2:title}'}
+	${3:code here}
+	{/code}
+snippet ct
+	{code source='${1:language}' title='${2:title}'}
+	${3:code here}
+	{/code}
+#
+# Inline Code
+#
+snippet mono
+	-+${1:<code text>}+- ${2:<weiter ...>}
+snippet m
+	-+${1:<code text>}+- ${2:<weiter ...>}
+#
+# Bold
+#
+snippet bold
+	__${1:<bold text>}__ ${2:<weiter ...>}
+snippet fett
+	__${1:<bold text>}__ ${2:<weiter ...>}
+snippet b
+	__${1:<bold text>}__ ${2:<weiter ...>}
+snippet f
+	__${1:<bold text>}__ ${2:<weiter ...>}
+#
+# Message Box
+#
+snippet box
+	^
+	${1:<box text>}
+	^
+	
+	${2:<weiter ...>}
+#
+# Links
+#
+snippet link
+	((${1:<link text>})) ${2:<weiter ...>}
+snippet l
+	((${1:<link text>})) ${2:<weiter ...>}
+snippet linkd
+	((${1:<link text>}|${2:<description>})) ${3:<weiter ...>}
+snippet ld
+	((${1:<link text>}|${2:<description>})) ${3:<weiter ...>}
+#
+# Tables
+#
+snippet table
+	||~ ${1:<Header 1>} | ${2:<Header 2>}
+	zeile_1           | zeile_1
+	zeile_n           | zeile_n     ||
+#
+#
+#
+snippet tmpl
+	a
+
+# tmpl
+snippet cla class .. end
+	class ${1:`substitute(Filename(), '^.', '\u&', '')`}
+		${2}
+	end
